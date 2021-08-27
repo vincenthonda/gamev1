@@ -1,10 +1,10 @@
 package com.example.gamev1
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var buttonOne : Button
@@ -31,7 +31,11 @@ class MainActivity : AppCompatActivity() {
         buttonOne.setBackgroundColor(Color.LTGRAY)
         buttonThree.setBackgroundColor(Color.TRANSPARENT)
 
-        while(intOne == intTwo) {
+
+
+
+        while (timesCorrect < 101) {
+        while (intOne == intTwo) {
             intOne = (Math.random() * 100).toInt()
             intTwo = (Math.random() * 100).toInt()
         }
@@ -40,46 +44,46 @@ class MainActivity : AppCompatActivity() {
 
         buttonOne.setOnClickListener {
 
-                if (intOne > intTwo) {
-                    buttonOne.setBackgroundColor(Color.GREEN)
-                    buttonThree.setOnClickListener{
-                        buttonTwo.setBackgroundColor(Color.DKGRAY)
-                        buttonOne.setBackgroundColor(Color.LTGRAY)
-                        buttonThree.isClickable = false
-                    }
-                } else if (intOne > intTwo) {
-                    buttonOne.setBackgroundColor(Color.RED)
-                    buttonThree.setOnClickListener{
-                        buttonTwo.setBackgroundColor(Color.DKGRAY)
-                        buttonOne.setBackgroundColor(Color.LTGRAY)
-                        buttonThree.isClickable = false
-                    }
+            if (intOne > intTwo) {
+                buttonOne.setBackgroundColor(Color.GREEN)
+                buttonThree.setOnClickListener {
+                    buttonTwo.setBackgroundColor(Color.DKGRAY)
+                    buttonOne.setBackgroundColor(Color.LTGRAY)
+                    buttonThree.isClickable = false
                 }
-                intOne = -1
-                intTwo = -1
+            } else if (intOne > intTwo) {
+                buttonOne.setBackgroundColor(Color.RED)
+                buttonThree.setOnClickListener {
+                    buttonTwo.setBackgroundColor(Color.DKGRAY)
+                    buttonOne.setBackgroundColor(Color.LTGRAY)
+                    buttonThree.isClickable = false
+                }
             }
-
-        buttonTwo.setOnClickListener {
-                if (intOne > intTwo) {
-                    buttonOne.setBackgroundColor(Color.GREEN)
-                    buttonThree.setOnClickListener{
-                        buttonTwo.setBackgroundColor(Color.DKGRAY)
-                        buttonOne.setBackgroundColor(Color.LTGRAY)
-                        buttonThree.isClickable = false
-                    }
-                } else if (intOne > intTwo) {
-                    buttonOne.setBackgroundColor(Color.RED)
-                    buttonThree.setOnClickListener{
-                        buttonTwo.setBackgroundColor(Color.DKGRAY)
-                        buttonOne.setBackgroundColor(Color.LTGRAY)
-                        buttonThree.isClickable = false
-                    }
-
-                }
-                intOne = -1
-                intTwo = -1
+            intOne = -1
+            intTwo = -1
         }
 
+        buttonTwo.setOnClickListener {
+            if (intOne > intTwo) {
+                buttonTwo.setBackgroundColor(Color.GREEN)
+                buttonThree.setOnClickListener {
+                    buttonTwo.setBackgroundColor(Color.DKGRAY)
+                    buttonOne.setBackgroundColor(Color.LTGRAY)
+                    buttonThree.isClickable = false
+                }
+            } else if (intOne > intTwo) {
+                buttonTwo.setBackgroundColor(Color.RED)
+                buttonThree.setOnClickListener {
+                    buttonTwo.setBackgroundColor(Color.DKGRAY)
+                    buttonOne.setBackgroundColor(Color.LTGRAY)
+                    buttonThree.isClickable = false
+                }
+
+            }
+            intOne = -1
+            intTwo = -1
+        }
+    }
 
     }
 }
